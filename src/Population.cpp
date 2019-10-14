@@ -43,7 +43,7 @@ void Population::reproduce() {
             auto speciesOffspring = species[i].reproduce(newSpeciesSize[i]);
             offspring.insert(offspring.end(), speciesOffspring.begin(), speciesOffspring.end());
         }
-        species = std::move(speciate(offspring, representatives));
+        species = std::move(assignSpecies(offspring, representatives));
         Genome fittest = this->fittestGenome();
     }
 }
